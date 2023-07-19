@@ -27,6 +27,7 @@
     "gatsby-plugin-manifest": "^5.10.0",
     "gatsby-plugin-sass": "^6.11.0",
     "gatsby-plugin-sharp": "^5.10.0",
+    "gatsby-plugin-styled-components": "^6.11.0",
     "gatsby-plugin-typescript": "^5.11.0",
     "gatsby-remark-images": "^7.10.0",
     "gatsby-remark-prismjs": "^7.10.0",
@@ -38,7 +39,8 @@
     "node-sass": "^8.0.0",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "styled-components": "^6.0.4"
   },
   "devDependencies": {
     "prettier": "^2.8.8",
