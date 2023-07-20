@@ -10,8 +10,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 interface SeoProps {
   title: string
-  description: string
-  children: JSX.Element
+  description?: string
+  children?: JSX.Element
 }
 
 const Seo = ({ description, title, children }: SeoProps) => {

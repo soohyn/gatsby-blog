@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio.js"
-import Layout from "../components/layout"
+import Layout from "../components/layout.js"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({
