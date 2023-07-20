@@ -1,11 +1,11 @@
-import * as React from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio.js"
+import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, location }: any) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
@@ -26,7 +26,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Bio />
       <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
+        {posts.map((post: any) => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
