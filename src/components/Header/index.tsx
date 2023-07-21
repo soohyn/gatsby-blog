@@ -10,7 +10,14 @@ interface HeaderProps {
 const Header = ({ title }: HeaderProps) => {
   return (
     <HeaderStyled>
-      <Link to="/">{title}</Link>
+      <div className="header-container left">
+        <Link to="/">
+          <h1 className="header-title">{title}</h1>
+        </Link>
+      </div>
+      <div className="header-container center"></div>
+
+      <div className="header-container right"></div>
     </HeaderStyled>
   )
 }
@@ -18,6 +25,28 @@ const Header = ({ title }: HeaderProps) => {
 const HeaderStyled = styled.header`
   display: flex;
   flex-direction: row;
+  padding: 16px 20px;
+  align-items: center;
+
+  .header-container {
+    display: flex;
+    flex-direction: row;
+
+    &.left {
+      h1.header-title {
+        font-size: 2.5em;
+        font-weight: 700;
+        color: #495057;
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+
+    &.center {
+      display: flex;
+      flex: 1;
+    }
+  }
 `
 
 export default Header
