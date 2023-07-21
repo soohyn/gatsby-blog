@@ -5,7 +5,12 @@ import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }: any) => {
+interface BlogIndexProps {
+  data: any
+  location: any
+}
+
+const BlogIndex = ({ data, location }: BlogIndexProps) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
