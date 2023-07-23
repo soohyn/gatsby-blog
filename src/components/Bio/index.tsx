@@ -9,6 +9,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { bio } from "../../configs"
 
 const Bio = () => {
   const data1 = useStaticQuery(graphql`
@@ -45,17 +46,20 @@ const Bio = () => {
       />
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
+          <strong>{author.name}</strong>
         </p>
       )}
+      <p>{author?.summary || null}</p>
+      {bio?.location && <p>{bio?.location}</p>}
+      {bio?.email && <p>{bio?.email}</p>}
+      {bio?.github && <p>{bio?.github}</p>}
+      {bio?.linkedin && <p>{bio?.linkedin}</p>}
     </BioStyled>
   )
 }
 
-const BioStyled = styled.div``
+const BioStyled = styled.div`
+  border: 1px dotted green;
+`
 
 export default Bio

@@ -7,6 +7,6 @@ export default {
   techSkill: ["React", "JavaScript", "TypeScript"],
   location: "Seoul, Republic of Korea",
   email: "sooheyonjo@gmail.com",
-  linkedin: "", //!
-  github: "",
+  linkedin: "https://www.linkedin.com/in/soohyeonjo", //!
+  github: "https://github.com/sooheyon",
 }

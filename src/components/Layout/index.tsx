@@ -23,6 +23,8 @@ const Layout = ({ location, title, children }: LayoutProps) => {
   )
 }
 
-const LayoutStyled = styled.div``
+const LayoutStyled = styled.div`
+  border: 1px dotted red;
+`
 
 export default Layout
