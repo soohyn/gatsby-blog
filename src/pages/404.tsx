@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
-import Seo from "../components/seo"
+import Seo from "../components/Seo"
 
 interface NotFoundPageProps {
   data: any
