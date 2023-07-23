@@ -9,12 +9,12 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 interface SeoProps {
-  title: string
+  title?: string
   description?: string
   children?: JSX.Element
 }
 
-const Seo = ({ description, title, children }: SeoProps) => {
+const Seo = ({ description, title = "", children }: SeoProps) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -36,7 +36,7 @@ const Seo = ({ description, title, children }: SeoProps) => {
 
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{title ? `${title} | ${defaultTitle}` : defaultTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
