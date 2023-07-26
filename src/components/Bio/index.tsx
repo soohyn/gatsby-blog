@@ -34,22 +34,18 @@ const Bio = () => {
 
   return (
     <BioStyled>
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          <strong>{author.name}</strong>
-        </p>
-      )}
-      <p>{author?.summary || null}</p>
+      <div className="profile">
+        <div className="image-container">
+          <img src={""} alt="title profile image" />
+        </div>
+        <div className="profile-info-container">
+          <p className="author-name">
+            <strong>{author.name}</strong>
+          </p>
+          <p className="author-summary">{author?.summary || null}</p>
+        </div>
+      </div>
+
       {bio?.location && <p>{bio?.location}</p>}
       {bio?.email && <p>{bio?.email}</p>}
       {bio?.github && <p>{bio?.github}</p>}
@@ -59,7 +55,41 @@ const Bio = () => {
 }
 
 const BioStyled = styled.div`
-  border: 1px dotted green;
+  border: 1px dotted blue;
+  display: flex;
+  flex-direction: column;
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .image-container {
+      display: flex;
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.64);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .profile-info-container {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 0 0 0;
+      text-align: center;
+
+      p.author-summary {
+        font-size: var(--fontSize-0);
+      }
+    }
+  }
 `
 
 export default Bio
