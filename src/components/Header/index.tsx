@@ -34,7 +34,7 @@ const HeaderStyled = styled.header`
 
     &.left {
       h1.header-title {
-        font-size: 2.5em;
+        font-size: 2em;
         font-weight: 700;
         color: #495057;
         padding: 0px;

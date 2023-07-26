@@ -1,5 +1,5 @@
 export default {
-  title: "Dev.Soo",
+  title: "Dev.soo.log",
   description: "Junior Front-End Developer Blog",
   author: "Soohyeon Jo",
   profileImage: "", //!
