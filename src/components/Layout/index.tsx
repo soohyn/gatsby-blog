@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Footer from "../Footer"
 import { styled } from "styled-components"
 import Header from "../Header"
+import Bio from "../Bio"
 
 interface LayoutProps {
   location: any //!
@@ -17,14 +18,43 @@ const Layout = ({ location, title, children }: LayoutProps) => {
   return (
     <LayoutStyled data-is-root-path={isRootPath}>
       <Header title={title} />
-      <main>{children}</main>
+      <div className="layout-row-container">
+        <div className="left-container">
+          <Bio />
+        </div>
+
+        <div className="right-container">
+          <main>{children}</main>
+        </div>
+      </div>
+
       <Footer />
     </LayoutStyled>
   )
 }
 
 const LayoutStyled = styled.div`
-  border: 1px dotted red;
+  display: flex;
+  flex-direction: column;
+
+  .layout-row-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 80vh;
+
+    > .left-container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    > .right-container {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      flex: 1;
+    }
+  }
 `
 
 export default Layout

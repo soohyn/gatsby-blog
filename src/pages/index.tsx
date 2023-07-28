@@ -31,7 +31,6 @@ const BlogIndex = ({ data, location }: BlogIndexProps) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map((post: any) => {
           const title = post.frontmatter.title || post.fields.slug
