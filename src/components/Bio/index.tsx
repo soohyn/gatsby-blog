@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { bio } from "../../configs"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const Bio = () => {
   const data1 = useStaticQuery(graphql`
@@ -45,19 +46,44 @@ const Bio = () => {
           <p className="author-summary">{author?.summary || null}</p>
         </div>
       </div>
+      <div className="separator" />
+      <div className="contact-info-container">
+        {bio?.location && <p>{bio?.location}</p>}
+        {bio?.email && <p>{bio?.email}</p>}
 
-      {bio?.location && <p>{bio?.location}</p>}
-      {bio?.email && <p>{bio?.email}</p>}
-      {bio?.github && <p>{bio?.github}</p>}
-      {bio?.linkedin && <p>{bio?.linkedin}</p>}
+        <div className="icon-list">
+          {bio?.github && (
+            <a
+              className="icon-wrap"
+              href={bio.github}
+              rel="external"
+              target="_blank"
+            >
+              <FaGithub size={20} />
+            </a>
+          )}
+          {bio?.linkedin && (
+            <a
+              className="icon-wrap"
+              href={bio.linkedin}
+              rel="external"
+              target="_blank"
+            >
+              <FaLinkedin size={20} />
+            </a>
+          )}
+        </div>
+      </div>
     </BioStyled>
   )
 }
 
 const BioStyled = styled.div`
-  border: 1px dotted blue;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  position: sticky;
+  top: 0;
 
   .profile {
     display: flex;
@@ -82,11 +108,41 @@ const BioStyled = styled.div`
     .profile-info-container {
       display: flex;
       flex-direction: column;
-      margin: 1rem 0 0 0;
       text-align: center;
+      padding: 12px;
 
       p.author-summary {
         font-size: var(--fontSize-0);
+      }
+    }
+  }
+
+  .separator {
+    height: 1px;
+    background-color: #dee2e6;
+    border-radius: 0.5px;
+  }
+
+  .contact-info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+
+    p {
+      font-size: var(--fontSize-0);
+    }
+
+    .icon-list {
+      display: flex;
+      flex-direction: row;
+      padding: 12px 0px 0px 0px;
+
+      a.icon-wrap {
+        margin: 0px 0px 0px 8px;
+
+        &:nth-child(1) {
+          margin: 0;
+        }
       }
     }
   }
