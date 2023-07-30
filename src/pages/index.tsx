@@ -31,7 +31,7 @@ const BlogIndex = ({ data, location }: BlogIndexProps) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <ol style={{ listStyle: `none` }}>
+      <ul style={{ listStyle: `none` }}>
         {posts.map((post: any) => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -62,7 +62,7 @@ const BlogIndex = ({ data, location }: BlogIndexProps) => {
             </li>
           )
         })}
-      </ol>
+      </ul>
     </Layout>
   )
 }

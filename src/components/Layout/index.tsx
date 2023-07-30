@@ -18,15 +18,16 @@ const Layout = ({ location, title, children }: LayoutProps) => {
   return (
     <LayoutStyled data-is-root-path={isRootPath}>
       <Header title={title} />
-      <div className="layout-row-container">
-        <div className="left-container">
-          <Bio />
-        </div>
 
-        <div className="right-container">
-          <main>{children}</main>
+      <main>
+        <div className="layout-row-container">
+          <div className="left-container">
+            <Bio />
+          </div>
+
+          <div className="right-container">{children}</div>
         </div>
-      </div>
+      </main>
 
       <Footer />
     </LayoutStyled>
@@ -36,11 +37,12 @@ const Layout = ({ location, title, children }: LayoutProps) => {
 const LayoutStyled = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 
   .layout-row-container {
     display: flex;
     flex-direction: row;
-    min-height: 80vh;
+    height: 100%;
 
     > .left-container {
       display: flex;
