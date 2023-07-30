@@ -37,23 +37,27 @@ const Layout = ({ location, title, children }: LayoutProps) => {
 const LayoutStyled = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100vw;
   min-height: 100vh;
 
   .layout-row-container {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    width: 100%;
+    min-height: 70vh;
 
     > .left-container {
       display: flex;
       flex-direction: column;
       position: relative;
+      flex-shrink: 0;
     }
 
     > .right-container {
       display: flex;
       flex-direction: column;
       padding: 20px;
+      width: 100%;
       flex: 1;
     }
   }
