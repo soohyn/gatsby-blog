@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
+const { setting } = require("./src/configs")
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -23,6 +25,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingId: setting.googleAnalytics,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
