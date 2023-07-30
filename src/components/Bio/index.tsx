@@ -50,29 +50,6 @@ const Bio = () => {
       <div className="contact-info-container">
         {bio?.location && <p>{bio?.location}</p>}
         {bio?.email && <p>{bio?.email}</p>}
-
-        <div className="icon-list">
-          {bio?.github && (
-            <a
-              className="icon-wrap"
-              href={bio.github}
-              rel="external"
-              target="_blank"
-            >
-              <FaGithub size={20} />
-            </a>
-          )}
-          {bio?.linkedin && (
-            <a
-              className="icon-wrap"
-              href={bio.linkedin}
-              rel="external"
-              target="_blank"
-            >
-              <FaLinkedin size={20} />
-            </a>
-          )}
-        </div>
       </div>
     </BioStyled>
   )
@@ -82,8 +59,6 @@ const BioStyled = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  position: sticky;
-  top: 0;
 
   .profile {
     display: flex;
@@ -130,20 +105,6 @@ const BioStyled = styled.div`
 
     p {
       font-size: var(--fontSize-0);
-    }
-
-    .icon-list {
-      display: flex;
-      flex-direction: row;
-      padding: 12px 0px 0px 0px;
-
-      a.icon-wrap {
-        margin: 0px 0px 0px 8px;
-
-        &:nth-child(1) {
-          margin: 0;
-        }
-      }
     }
   }
 `

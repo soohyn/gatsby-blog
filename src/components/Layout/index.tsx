@@ -41,6 +41,7 @@ const LayoutStyled = styled.div`
     display: flex;
     flex-direction: row;
     min-height: 80vh;
+    border: 1px dotted red;
 
     > .left-container {
       display: flex;

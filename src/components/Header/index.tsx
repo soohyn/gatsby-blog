@@ -25,16 +25,18 @@ const Header = ({ title }: HeaderProps) => {
 const HeaderStyled = styled.header`
   display: flex;
   flex-direction: row;
-  padding: 16px 20px;
+  padding: 16px 32px;
   align-items: center;
-
+  backdrop-filter: blur(10px);
+  width: 100%;
+  border: 1px dotted red;
   .header-container {
     display: flex;
     flex-direction: row;
 
     &.left {
       h1.header-title {
-        font-size: 2em;
+        font-size: 1.8rem;
         font-weight: 700;
         color: #495057;
         padding: 0px;
