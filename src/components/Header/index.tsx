@@ -25,11 +25,14 @@ const Header = ({ title }: HeaderProps) => {
 const HeaderStyled = styled.header`
   display: flex;
   flex-direction: row;
-  padding: 16px 32px;
   align-items: center;
-  backdrop-filter: blur(10px);
   width: 100%;
-  border: 1px dotted red;
+  height: 3.8rem;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+
   .header-container {
     display: flex;
     flex-direction: row;
@@ -37,6 +40,7 @@ const HeaderStyled = styled.header`
     &.left {
       h1.header-title {
         font-size: 1.8rem;
+        line-height: 100%;
         font-weight: 700;
         color: #495057;
         padding: 0px;

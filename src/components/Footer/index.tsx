@@ -2,6 +2,7 @@ import React from "react"
 import { bio } from "../../configs"
 import styled from "styled-components"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { MdAlternateEmail } from "react-icons/md"
 
 const Footer = () => {
   const author = bio.author
@@ -13,20 +14,24 @@ const Footer = () => {
           © {new Date().getFullYear()} {author}, Built with{" "}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </div>
+        <div className="footer-info">
+          {bio?.location && <p>{bio?.location}</p>}
+        </div>
       </div>
 
       <div className="right-container">
-        <div className="icon-list">
-          {bio?.github && (
+        <div className="contact-info-container">
+          {bio?.email && (
             <a
               className="icon-wrap"
               href={bio.github}
               rel="external"
               target="_blank"
             >
-              <FaGithub size={20} />
+              <MdAlternateEmail size={20} />
             </a>
           )}
+
           {bio?.linkedin && (
             <a
               className="icon-wrap"
@@ -35,6 +40,16 @@ const Footer = () => {
               target="_blank"
             >
               <FaLinkedin size={20} />
+            </a>
+          )}
+          {bio?.github && (
+            <a
+              className="icon-wrap"
+              href={bio.github}
+              rel="external"
+              target="_blank"
+            >
+              <FaGithub size={20} />
             </a>
           )}
         </div>
@@ -46,6 +61,7 @@ const Footer = () => {
 const FooterStyled = styled.footer`
   display: flex;
   flex-direction: row;
+  padding: 20px 0px 40px 0px;
 
   .left-container {
     display: flex;
@@ -64,7 +80,7 @@ const FooterStyled = styled.footer`
     flex-direction: column;
     padding: 20px 40px;
 
-    .icon-list {
+    .contact-info-container {
       display: flex;
       flex-direction: row;
       padding: 12px 0px 0px 0px;

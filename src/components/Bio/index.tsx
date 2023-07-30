@@ -47,10 +47,6 @@ const Bio = () => {
         </div>
       </div>
       <div className="separator" />
-      <div className="contact-info-container">
-        {bio?.location && <p>{bio?.location}</p>}
-        {bio?.email && <p>{bio?.email}</p>}
-      </div>
     </BioStyled>
   )
 }
@@ -59,6 +55,8 @@ const BioStyled = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  position: sticky;
+  top: 3.8rem;
 
   .profile {
     display: flex;
@@ -96,16 +94,6 @@ const BioStyled = styled.div`
     height: 1px;
     background-color: #dee2e6;
     border-radius: 0.5px;
-  }
-
-  .contact-info-container {
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
-
-    p {
-      font-size: var(--fontSize-0);
-    }
   }
 `
 
