@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/Bio"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-import { bio } from "../configs"
+import config from "../configs"
 
 interface BlogIndexProps {
   data: any
@@ -12,7 +12,7 @@ interface BlogIndexProps {
 }
 
 const BlogIndex = ({ data, location }: BlogIndexProps) => {
-  const siteTitle = bio.title || `Title`
+  const siteTitle = config.bio.title || `Title`
 
   const posts = data.allMarkdownRemark.nodes
 

@@ -1,11 +1,11 @@
 import React from "react"
-import { bio } from "../../configs"
+import config from "../../configs"
 import styled from "styled-components"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { MdAlternateEmail } from "react-icons/md"
 
 const Footer = () => {
-  const author = bio.author
+  const author = config.bio.author
 
   return (
     <FooterStyled>
@@ -15,16 +15,16 @@ const Footer = () => {
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </div>
         <div className="footer-info">
-          {bio?.location && <p>{bio?.location}</p>}
+          {config.bio?.location && <p>{config.bio?.location}</p>}
         </div>
       </div>
 
       <div className="right-container">
         <div className="contact-info-container">
-          {bio?.email && (
+          {config.bio?.email && (
             <a
               className="icon-wrap"
-              href={bio.github}
+              href={config.bio.github}
               rel="external"
               target="_blank"
             >
@@ -32,20 +32,20 @@ const Footer = () => {
             </a>
           )}
 
-          {bio?.linkedin && (
+          {config.bio?.linkedin && (
             <a
               className="icon-wrap"
-              href={bio.linkedin}
+              href={config.bio.linkedin}
               rel="external"
               target="_blank"
             >
               <FaLinkedin size={20} />
             </a>
           )}
-          {bio?.github && (
+          {config.bio?.github && (
             <a
               className="icon-wrap"
-              href={bio.github}
+              href={config.bio.github}
               rel="external"
               target="_blank"
             >

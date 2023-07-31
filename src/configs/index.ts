@@ -1,2 +1,7 @@
-export { default as bio } from "./bio"
-export { default as setting } from "./setting"
+const bio = require("./bio")
+const setting = require("./setting")
+
+export default {
+  bio,
+  setting,
+}

@@ -9,7 +9,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import { bio } from "../../configs"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const Bio = () => {

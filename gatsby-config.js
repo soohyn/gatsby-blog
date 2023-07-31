@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
-// const config = require("./configs")
+const setting = require("./src/configs/setting")
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -29,13 +29,20 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
-    // {
-    //   resolve: "gatsby-plugin-google-gtag",
-    //   options: {
-    //     trackingId: config.setting.googleAnalytics,
-    //   },
-    // },
-
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: [setting.googleAnalytics],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: setting.siteUrl,
+        sitemap: `${setting.siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
