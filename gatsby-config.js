@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
-const { setting } = require("./src/configs")
+// const config = require("./configs")
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -25,10 +25,21 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
+    // {
+    //   resolve: "gatsby-plugin-google-gtag",
+    //   options: {
+    //     trackingId: config.setting.googleAnalytics,
+    //   },
+    // },
+
     {
-      resolve: "gatsby-plugin-google-gtag",
+      resolve: `gatsby-plugin-sitemap`,
       options: {
-        trackingId: setting.googleAnalytics,
+        output: `/sitemap.xml`,
       },
     },
     {
@@ -65,10 +76,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-styled-components`,
+
     {
       resolve: `gatsby-plugin-feed`,
       options: {
