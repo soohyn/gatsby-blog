@@ -27,8 +27,8 @@ const HeaderStyled = styled.header`
   flex-direction: row;
   align-items: center;
   width: 100%;
-  height: 3.8rem;
-  padding: 1rem 2rem;
+  height: var(--header-height);
+  padding: var(--header-vertical-padding) 2rem;
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -39,8 +39,8 @@ const HeaderStyled = styled.header`
 
     &.left {
       h1.header-title {
-        font-size: 1.8rem;
-        line-height: 100%;
+        font-size: var(--header-title-font-size);
+        line-height: var(--header-title-line-height);
         font-weight: 700;
         color: #495057;
         padding: 0px;

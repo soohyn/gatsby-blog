@@ -55,7 +55,7 @@ const BioStyled = styled.div`
   flex-direction: column;
   padding: 20px;
   position: sticky;
-  top: 3.8rem;
+  top: var(--header-height);
 
   .profile {
     display: flex;

@@ -6,6 +6,15 @@
   margin: 0;
 }
 
+:root {
+  --header-vertical-padding: 1.2em;
+  --header-title-font-size: 1.8em;
+  --header-title-line-height: 100%;
+  --header-height: calc(
+    var(--header-vertical-padding) * 2 + var(--header-title-font-size)
+  );
+}
+
 a {
   color: inherit;
   text-decoration: none;
