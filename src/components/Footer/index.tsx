@@ -24,8 +24,8 @@ const Footer = () => {
           {config.bio?.email && (
             <a
               className="icon-wrap"
-              href={config.bio.github}
-              rel="external"
+              href={`mailto:${config.bio?.email}`}
+              rel="noreferrer"
               target="_blank"
             >
               <MdAlternateEmail size={20} />
